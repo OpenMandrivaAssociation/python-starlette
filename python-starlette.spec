@@ -1,7 +1,7 @@
 %define module starlette
 
 Name:		python-%{module}
-Version:	0.46.1
+Version:	0.50.0
 Release:	1
 Source0:	https://files.pythonhosted.org/packages/source/s/%{module}/%{module}-%{version}.tar.gz
 Summary:	The little ASGI library that shines
