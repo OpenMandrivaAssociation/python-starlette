@@ -2,7 +2,7 @@
 
 Name:		python-%{module}
 Version:	0.50.0
-Release:	1
+Release:	2
 Source0:	https://files.pythonhosted.org/packages/source/s/%{module}/%{module}-%{version}.tar.gz
 Summary:	The little ASGI library that shines
 URL:		https://pypi.org/project/starlette/
@@ -11,11 +11,11 @@ Group:		Development/Python
 BuildSystem:	python
 BuildArch:	noarch
 
-BuildRequires:	pkgconfig(python3)
-BuildRequires:	python-build
-BuildRequires:	python-hatchling
-Requires:	python-anyio >= 3.6.0
-Requires:	python-typing-extensions
+BuildSystem:	python
+BuildRequires:	python%{pyver}dist(build)
+BuildRequires:	python%{pyver}dist(hatchling)
+Requires:	python%{pyver}dist(anyio) >= 3.6.0
+Requires:	python%{pyver}dist(typing-extensions)
 
 %description
 Starlette is a lightweight ASGI framework/toolkit, which is ideal for building
