@@ -1,21 +1,20 @@
 %define module starlette
 
-Name:		python-%{module}
-Version:	0.50.0
-Release:	2
-Source0:	https://files.pythonhosted.org/packages/source/s/%{module}/%{module}-%{version}.tar.gz
+Name:		python-starlette
+Version:	1.1.0
+Release:	1
 Summary:	The little ASGI library that shines
-URL:		https://pypi.org/project/starlette/
 License:	BSD-3-Clause
 Group:		Development/Python
-BuildSystem:	python
-BuildArch:	noarch
+URL:		https://starlette.dev/
+Source0:	https://files.pythonhosted.org/packages/source/s/%{module}/%{module}-%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildSystem:	python
+BuildArch:	noarch
 BuildRequires:	python%{pyver}dist(build)
 BuildRequires:	python%{pyver}dist(hatchling)
-Requires:	python%{pyver}dist(anyio) >= 3.6.0
-Requires:	python%{pyver}dist(typing-extensions)
+BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:	python%{pyver}dist(wheel)
 
 %description
 Starlette is a lightweight ASGI framework/toolkit, which is ideal for building
@@ -36,22 +35,6 @@ It is production-ready, and gives you the following:
   Compatible with asyncio and trio backends.
   Great overall performance against independent benchmarks.
 
-
-%prep
-%autosetup -p1 -n starlette-%{version}
-
-%build
-%py_build
-
-%install
-%py3_install
-
 %files
-%{python3_sitelib}/%{module}-%{version}.dist-info
-%{python3_sitelib}/%{module}/*.py
-%{python3_sitelib}/%{module}/*.typed
-%{python3_sitelib}/%{module}/__pycache__/*.cpython-3*.pyc
-%{python3_sitelib}/%{module}/middleware/*.py
-%{python3_sitelib}/%{module}/middleware/__pycache__/*.cpython-3*.pyc
-%doc README.md
-%license LICENSE.md
+%{python_sitelib}/%{module}
+%{python_sitelib}/%{module}-%{version}.dist-info
