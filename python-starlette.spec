@@ -1,7 +1,7 @@
 %define module starlette
 
 Name:		python-starlette
-Version:	1.1.0
+Version:	1.2.0
 Release:	1
 Summary:	The little ASGI library that shines
 License:	BSD-3-Clause
