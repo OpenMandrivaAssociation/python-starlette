@@ -2,7 +2,7 @@
 
 Name:		python-starlette
 Version:	1.3.1
-Release:	1
+Release:	2
 Summary:	The little ASGI library that shines
 License:	BSD-3-Clause
 Group:		Development/Python
